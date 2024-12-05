@@ -18,4 +18,3 @@ class BaseSuppliesRepository(ABC):
     @abstractmethod
     def delete(self, supplies_id: int) -> bool:
         pass
-

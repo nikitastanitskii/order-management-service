@@ -14,6 +14,6 @@ class DeleteSupplies:
 
 
 def get_delete_supply_service(
-    supply_repository: BaseSuppliesRepository = Depends(get_supplies_repository),
+    supplies_repository: BaseSuppliesRepository = Depends(get_supplies_repository),
 ) -> DeleteSupplies:
-    return DeleteSupplies(supply_repository=supply_repository)
+    return DeleteSupplies(supplies_repository=supplies_repository)

@@ -2,6 +2,7 @@ from src.Parts.repository.base_part_repository import BasePartsRepository
 from src.Parts.repository.parts_repository import get_part_repository
 from src.Parts.schemas.parts_schemas import PartModel
 from fastapi import Depends
+from pydantic import parse_obj_as
 
 
 class GetAllParts:
@@ -9,7 +10,10 @@ class GetAllParts:
         self.__repository = part_repository
 
     def get_all(self) -> list[PartModel]:
-        return self.__repository.get_all()
+        all_parts = self.__repository.get_all()
+        if not all_parts:
+            return []
+        return parse_obj_as(list[PartModel], all_parts)
 
 
 def get_all_parts_service(

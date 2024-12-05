@@ -16,7 +16,7 @@ class PartsRepository(BasePartsRepository):
                     """
                     SELECT 1 FROM parts WHERE name = %s LIMIT 1;
                     """,
-                    (name,)
+                    (name,),
                 )
                 return cursor.fetchone() is not None
 
@@ -44,7 +44,14 @@ class PartsRepository(BasePartsRepository):
                 cursor.execute("SELECT * FROM parts;")
                 rows = cursor.fetchall()
                 return [
-                    PartModel(id=row[0], name=row[1], contact=row[2]) for row in rows
+                    PartModel(
+                        id=row[0],
+                        name=row[1],
+                        description=row[2],
+                        price=row[3],
+                        in_stock=row[4],
+                    )
+                    for row in rows
                 ]
 
     def update(self, part_id: int, part_data: PartModel) -> None:

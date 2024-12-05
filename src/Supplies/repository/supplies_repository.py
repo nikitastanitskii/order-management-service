@@ -68,7 +68,6 @@ class SuppliesRepository(BaseSuppliesRepository):
         return True
 
 
-
 def get_supplies_repository(
     connector=Depends(get_postgres_connector),
 ) -> BaseSuppliesRepository:

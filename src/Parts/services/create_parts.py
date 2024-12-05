@@ -14,7 +14,9 @@ class CreateParts:
             raise PartNameCannotBeEmpty("Название запчасти не может быть пустым.")
         # Проверка, что такая запчасть уже существует
         if self.__repository.exists(part_data.name):
-            raise PartsAlreadyExists(f"Запчасть с названием {part_data.name} уже существует.")
+            raise PartsAlreadyExists(
+                f"Запчасть с названием {part_data.name} уже существует."
+            )
 
         self.__repository.create(part_data)
 
