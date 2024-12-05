@@ -1,6 +1,7 @@
 from fastapi import Depends
 from src.Supplies.repository.base_supplies_repository import BaseSuppliesRepository
 from src.Supplies.repository.supplies_repository import get_supplies_repository
+from src.Supplies.services.supplies_exception import SuppliesNameCannotBeEmpty
 
 
 class DeleteSupplies:
@@ -9,7 +10,7 @@ class DeleteSupplies:
 
     def delete(self, supplies_id: int) -> None:
         if not supplies_id:
-            raise ValueError("ID поставки обязателен для удаления.")
+            raise SuppliesNameCannotBeEmpty("ID поставки обязателен для удаления.")
         self.__repository.delete(supplies_id)
 
 
