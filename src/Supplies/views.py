@@ -1,6 +1,6 @@
 from fastapi import APIRouter, FastAPI, HTTPException, Depends
 from src.Suppliers.services.suppliers_exception import SuppliersNotFoundException
-from src.Supplies.schemas.Supplies_schemas import SuppliesModel
+from src.Supplies.schemas.supplies_schemas import SuppliesModel
 from src.Supplies.services.create_supplies import (
     CreateSupplies,
     get_create_supply_service,

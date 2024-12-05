@@ -1,5 +1,5 @@
 from src.Suppliers.repository.base_suppliers_repository import BaseSuppliersRepository
-from src.Suppliers.schemas.Suppliers_schemas import SuppliersModel
+from src.Suppliers.schemas.suppliers_schemas import SuppliersModel
 from fastapi import Depends
 from src.core.db.postgres_connector import get_postgres_connector
 
@@ -21,7 +21,7 @@ class SuppliersRepository(BaseSuppliersRepository):
                 )
 
     def get_all(self) -> list[SuppliersModel]:
-        """Получение списка всех запчастей"""
+        """Получение списка всех поставщиков"""
         with self.__connector:
             with self.__connector.cursor() as cursor:
                 cursor.execute("SELECT * FROM suppliers;")

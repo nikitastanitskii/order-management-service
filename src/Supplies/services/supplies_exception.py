@@ -14,3 +14,11 @@ class SuppliesNotFoundException(Exception):
     """Поставка не найдена"""
 
     pass
+
+
+class SuppliesAndPartNameCannotBeEmpty(Exception):
+    """Название поставки и запчасти пустое."""
+
+    pass
+
+

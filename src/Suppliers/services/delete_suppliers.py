@@ -11,6 +11,7 @@ class DeleteSuppliers:
         self.__repository = supplier_repository
 
     def delete(self, supplier_id: int) -> None:
+        """Функция для удаления поставщика"""
         # Проверяем, существует ли запчасть
         if self.__repository.get(supplier_id):
             self.__repository.delete(supplier_id)

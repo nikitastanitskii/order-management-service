@@ -19,7 +19,8 @@ def create_parts_table():
             )
 
 
-def create_suppliers_table():  # Создаём таблицу Suppliers
+def create_suppliers_table():
+    """Создаёт таблицу Suppliers, если она не существует"""
     connector = get_postgres_connector()
     with connector:
         with connector.cursor() as cur:
@@ -34,7 +35,8 @@ def create_suppliers_table():  # Создаём таблицу Suppliers
             )
 
 
-def create_supplies_table():  # Создаём таблицу Supplies
+def create_supplies_table():
+    """Создаёт таблицу Supplies, если она не существует"""
     connector = get_postgres_connector()
     with connector:
         with connector.cursor() as cur:

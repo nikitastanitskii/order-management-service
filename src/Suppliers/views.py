@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException
-from src.Suppliers.schemas.Suppliers_schemas import SuppliersModel
+from src.Suppliers.schemas.suppliers_schemas import SuppliersModel
 from src.Suppliers.services.create_suppliers import (
     CreateSuppliers,
     get_create_supplier_service,

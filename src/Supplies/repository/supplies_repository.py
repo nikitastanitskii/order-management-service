@@ -1,5 +1,5 @@
 from src.Supplies.repository.base_supplies_repository import BaseSuppliesRepository
-from src.Supplies.schemas.Supplies_schemas import SuppliesModel
+from src.Supplies.schemas.supplies_schemas import SuppliesModel
 from fastapi import Depends
 from src.core.db.postgres_connector import get_postgres_connector
 
@@ -60,7 +60,7 @@ class SuppliesRepository(BaseSuppliesRepository):
                     ),
                 )
 
-    def delete(self, supplies_id: int):
+    def delete(self, supplies_id: int) -> bool:
         """Удаление поставки по ID."""
         with self.__connector:
             with self.__connector.cursor() as cursor:

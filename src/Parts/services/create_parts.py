@@ -10,6 +10,7 @@ class CreateParts:
         self.__repository = part_repository
 
     def create(self, part_data: PartModel) -> None:
+        """Функция для создания запчасти"""
         if not part_data.name:
             raise PartNameCannotBeEmpty("Название запчасти не может быть пустым.")
         # Проверка, что такая запчасть уже существует

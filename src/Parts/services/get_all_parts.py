@@ -10,10 +10,11 @@ class GetAllParts:
         self.__repository = part_repository
 
     def get_all(self) -> list[PartModel]:
+        """Функция для получения списка всех запчастей"""
         all_parts = self.__repository.get_all()
         if not all_parts:
             return []
-        return parse_obj_as(list[PartModel], all_parts)
+        return parse_obj_as(list[PartModel], all_parts)     # Преобразует необработанные данные в PartModel
 
 
 def get_all_parts_service(

@@ -3,7 +3,7 @@ from src.Suppliers.repository.suppliers_repository import (
     BaseSuppliersRepository,
     get_suppliers_repository,
 )
-from src.Suppliers.schemas.Suppliers_schemas import SuppliersModel
+from src.Suppliers.schemas.suppliers_schemas import SuppliersModel
 from src.Suppliers.services.suppliers_exception import SuppliersNameCannotBeEmpty
 
 
@@ -12,6 +12,7 @@ class CreateSuppliers:
         self.__repository = supplier_repository
 
     def create(self, supplier_data: SuppliersModel) -> None:
+        """Функция для создания поставщика"""
         if not supplier_data.name:
             raise SuppliersNameCannotBeEmpty(
                 "Название поставщика не может быть пустым."

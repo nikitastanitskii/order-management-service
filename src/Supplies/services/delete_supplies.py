@@ -9,6 +9,7 @@ class DeleteSupplies:
         self.__repository = supplies_repository
 
     def delete(self, supplies_id: int) -> None:
+        """Функция для удаления поставки"""
         if not supplies_id:
             raise SuppliesNameCannotBeEmpty("ID поставки обязателен для удаления.")
         self.__repository.delete(supplies_id)

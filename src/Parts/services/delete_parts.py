@@ -9,6 +9,7 @@ class DeleteParts:
         self.__repository = part_repository
 
     def delete(self, part_id: int) -> None:
+        """Функция для удаления запчасти"""
         # Проверяем, существует ли запчасть
         if self.__repository.get(part_id):
             self.__repository.delete(part_id)

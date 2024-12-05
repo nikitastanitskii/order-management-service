@@ -13,6 +13,7 @@ class UpdateParts:
         self.__repository = part_repository
 
     def update(self, part_id: int, part_data: PartModel) -> None:
+        """Функция для обновления запчасти"""
         if not part_data.name:
             raise PartNameCannotBeEmpty("Название запчасти не может быть пустым.")
         existing_part = self.__repository.get(part_id)

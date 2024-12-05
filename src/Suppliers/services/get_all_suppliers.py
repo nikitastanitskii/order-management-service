@@ -3,7 +3,7 @@ from src.Suppliers.repository.suppliers_repository import (
     BaseSuppliersRepository,
     get_suppliers_repository,
 )
-from src.Suppliers.schemas.Suppliers_schemas import SuppliersModel
+from src.Suppliers.schemas.suppliers_schemas import SuppliersModel
 
 
 class GetAllSuppliers:
@@ -11,6 +11,7 @@ class GetAllSuppliers:
         self.__repository = supplier_repository
 
     def get_all(self) -> list[SuppliersModel]:
+        """Функция для получения списка всех поставщиков"""
         return self.__repository.get_all()
 
 

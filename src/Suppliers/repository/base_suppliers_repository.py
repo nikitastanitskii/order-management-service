@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from src.Suppliers.schemas.Suppliers_schemas import SuppliersModel
+from src.Suppliers.schemas.suppliers_schemas import SuppliersModel
 
 
 class BaseSuppliersRepository(ABC):
