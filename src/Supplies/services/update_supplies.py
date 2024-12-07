@@ -1,7 +1,6 @@
 from fastapi import Depends
 from src.Supplies.repository.base_supplies_repository import BaseSuppliesRepository
 from src.Supplies.repository.supplies_repository import get_supplies_repository
-from src.Supplies.schemas import supplies_schemas
 from src.Supplies.schemas.supplies_schemas import SuppliesModel
 from src.Supplies.services.supplies_exception import SuppliesNameCannotBeEmpty
 
