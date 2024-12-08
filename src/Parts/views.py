@@ -21,7 +21,7 @@ def create_part(
         create_part_service.create(part_data)
         return {"message": "Запчасть успешно создана"}
     except PartsAlreadyExists:
-        raise HTTPException(status_code=404, detail="Такая запчасть уже есть")
+        raise HTTPException(status_code=400, detail="Такая запчасть уже есть")
 
 
 @parts_router.get("/", summary="Метод для получения списка всех запчастей")
